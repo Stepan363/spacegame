@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<style>
+			img {	position: fixed; }
+		</style>
+	</head>
+	<body>
+
+      <img src="images/spacex.jpg" style="top:0px;" width="1080" height="654">
+      <img src="images/spaceship.png" id="spaceship" style="left:600px;" width="50" height="50">
+ 
+	</body>
+  <script>
+    spaceship_y_pos = 0;
+    function update()
+    {
+      if(spaceship_y_pos < 84)
+      {
+        spaceship_y_pos = spaceship_y_pos + 1;
+        $("#spaceship").css('top', spaceship_y_pos);
+      }    
+    } 
+
+    window.onload = function()
+    {            
+      setInterval(update, 50);
+    }
+  </script>
+</html>
+

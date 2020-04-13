@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<link rel="shortcut icon" type="image/x-icon" href="icon_top.png" />
+		<style>
+			img {	position: fixed;
+			}
+		</style>
+	</head>
+	<body>
+
+      <img src="images/oink.jpg" id="everyonesneedshelpbyyou" style="top:0px;" width="1080" height="654">
+     	<img src="images/hiss.jpg" id="Thewholeworldisgettingdestroyed" style="top: 0px;" width="1080" height="654">
+      <img src="images/game_title.jpg" id="canyousavetheworldbyshootingbadguys" style="top:0px;" width="1080" height="654">
+
+	    <script>
+          $("#Thewholeworldisgettingdestroyed").hide();
+        	$("#everyonesneedshelpbyyou").hide();
+          $("#canyousavetheworldbyshootingbadguys").hide();
+			    sausage_rool = 0;
+		    	picture_index = 0;
+
+          function update()
+          {
+          	sausage_rool = sausage_rool + 0.01;
+
+            if(sausage_rool > 1)
+            {
+              //  reset opacity and change picture
+              sausage_rool = 0;
+              picture_index = picture_index + 1;
+            }
+
+            if(picture_index == 0)
+            {
+              $("#everyonesneedshelpbyyou").css({ opacity: sausage_rool }); 
+              $("#everyonesneedshelpbyyou").show();
+            }
+            
+            if(picture_index == 2 )
+            {
+              $("#canyousavetheworldbyshootingbadguys").css({ opacity: sausage_rool }); 
+              $("#canyousavetheworldbyshootingbadguys").show();
+            }          
+            
+
+            if (picture_index  == 1 )
+            {
+              $("#Thewholeworldisgettingdestroyed").css({ opacity: sausage_rool }); 
+              $("#Thewholeworldisgettingdestroyed").show();
+            }
+	          
+          }
+    			
+           	  
+
+          window.onload = function()
+          {            
+			      setInterval(update, 123);
+			    }
+ 
+        </script>
+	</body>
+</html>
+
+
+
